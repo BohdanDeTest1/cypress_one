@@ -7,21 +7,21 @@ describe('QAuto Header and Footer Button and Link Tests', () => {
 
     it('Find and log each header button', () => {
         cy.get('header .btn').each(($button) => {
-            const buttonText = $button.text(); // Отримати текст кнопки
-            cy.log(`Header Button: ${buttonText}`); // Вивести текст у консоль
+            const buttonText = $button.text();
+            cy.log(`Header Button: ${buttonText}`);
             cy.wrap($button)
-                .should('be.visible') // Перевірити, що кнопка видима
-                .and('not.be.disabled'); // Перевірити, що кнопка не заблокована
+                .should('be.visible')
+                .and('not.be.disabled');
         });
     });
 
     it('Find and log each footer button and link', () => {
         cy.get('footer .btn, footer a').each(($element) => {
-            const elementText = $element.text(); // Отримати текст кнопки або посилання
-            cy.log(`Footer Element: ${elementText}`); // Вивести текст у консоль
+            const elementText = $element.text();
+            cy.log(`Footer Element: ${elementText}`);
             cy.wrap($element)
-                .should('be.visible') // Перевірити, що кнопка або посилання видиме
-                .and('not.be.disabled'); // Перевірити, що кнопка не заблокована
+                .should('be.visible')
+                .and('not.be.disabled');
         });
     });
 });
