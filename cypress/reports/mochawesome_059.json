@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T14:06:30.336Z",
+    "end": "2024-10-27T14:06:39.399Z",
+    "duration": 9063,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1174d9f9-d3fe-4473-bed2-973c9e9c07b2",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_3/User_1_test.cy.js",
+      "file": "cypress/e2e/Homework_3/User_1_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "373345b9-ab9f-4381-bbf6-409d3e328cd3",
+          "title": "QAuto Registration and Login Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should add a new car to the garage",
+              "fullTitle": "QAuto Registration and Login Tests Should add a new car to the garage",
+              "timedOut": null,
+              "duration": 3982,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "garagePage.openAddCarModal();\ngaragePage.selectCarBrand('BMW');\ngaragePage.selectCarModel('5');\ngaragePage.enterMileage('20');\ngaragePage.submitAddCar();",
+              "err": {},
+              "uuid": "1067e67d-127b-4c5d-9b9e-2d865005955f",
+              "parentUUID": "373345b9-ab9f-4381-bbf6-409d3e328cd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add fuel expense",
+              "fullTitle": "QAuto Registration and Login Tests Add fuel expense",
+              "timedOut": null,
+              "duration": 2863,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expensesPage.openAddFuelExpenseModal();\nexpensesPage.enterExpenseMileage('21');\nexpensesPage.enterExpenseLiters('10');\nexpensesPage.enterExpenseTotalCost('10');\nexpensesPage.submitAddExpense();",
+              "err": {},
+              "uuid": "6c917399-dc69-49b8-9592-9769d0c2ca5d",
+              "parentUUID": "373345b9-ab9f-4381-bbf6-409d3e328cd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove the car",
+              "fullTitle": "QAuto Registration and Login Tests Remove the car",
+              "timedOut": null,
+              "duration": 2141,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "garagePage.openEditCarModal();\ngaragePage.removeCar();",
+              "err": {},
+              "uuid": "c7c54d74-bfee-4409-b7b0-7a088ff0340a",
+              "parentUUID": "373345b9-ab9f-4381-bbf6-409d3e328cd3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1067e67d-127b-4c5d-9b9e-2d865005955f",
+            "6c917399-dc69-49b8-9592-9769d0c2ca5d",
+            "c7c54d74-bfee-4409-b7b0-7a088ff0340a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8986,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

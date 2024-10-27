@@ -1,0 +1,13 @@
+{
+    "WebPage": {
+        "PageOne": "@qauto2.forstudy.space/"
+    },
+    "WebPagelogin": {
+        "login": "guest",
+        "password": "welcome2qauto"
+    },
+    "User": {
+        "email": "test+unique2@mail.com",
+        "password": "ValidPass1232"
+    }
+}

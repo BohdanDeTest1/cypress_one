@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T13:02:36.068Z",
+    "end": "2024-10-27T13:02:39.245Z",
+    "duration": 3177,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "80628f0d-4508-4ca6-8f64-de9963c3d440",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_3/User_1_test.cy.js",
+      "file": "cypress/e2e/Homework_3/User_1_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "849d3b07-3d15-4f3a-b12a-adf308d4d99a",
+          "title": "QAuto Registration and Login Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Correct login",
+              "fullTitle": "QAuto Registration and Login Tests Correct login",
+              "timedOut": null,
+              "duration": 3151,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('include', '/panel/garage');",
+              "err": {},
+              "uuid": "2af4d070-f39e-4582-bea8-52142a71e3fa",
+              "parentUUID": "849d3b07-3d15-4f3a-b12a-adf308d4d99a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2af4d070-f39e-4582-bea8-52142a71e3fa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

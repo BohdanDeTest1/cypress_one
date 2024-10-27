@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-21T19:13:33.753Z",
+    "end": "2024-10-21T19:13:45.124Z",
+    "duration": 11371,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7ee5f2da-492b-4732-b6a3-41ad5db97b14",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_3/UserTest1.cy.js",
+      "file": "cypress/e2e/Homework_3/UserTest1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e864f7ee-1e3a-4932-9003-2f08f9c26303",
+          "title": "QAuto Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login Test",
+              "fullTitle": "QAuto Tests Login Test",
+              "timedOut": null,
+              "duration": 11337,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('#signinEmail').type(login);\ncy.get('#signinPassword').type(password, {\n  sensitive: true\n});\ncy.get('button').contains('Login').click();\ncy.url().should('include', '/panel/garage');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#signinEmail`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#signinEmail`, but never found it.\n    at Context.eval (webpack://cypress_one/./cypress/e2e/Homework_3/UserTest1.cy.js:6:11)",
+                "diff": null
+              },
+              "uuid": "960bbd77-2300-408f-8bb9-af334f9668c3",
+              "parentUUID": "e864f7ee-1e3a-4932-9003-2f08f9c26303",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "960bbd77-2300-408f-8bb9-af334f9668c3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11337,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

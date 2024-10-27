@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T13:07:13.275Z",
+    "end": "2024-10-27T13:07:15.427Z",
+    "duration": 2152,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a0bfcc2-bb1c-4aea-80de-5e558bf4ddee",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_1/homework_1.cy.js",
+      "file": "cypress/e2e/Homework_1/homework_1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "524f77c8-0b60-496f-acb0-1570a94c8b47",
+          "title": "QAuto Header and Footer Button and Link Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Find and log each header button",
+              "fullTitle": "QAuto Header and Footer Button and Link Tests Find and log each header button",
+              "timedOut": null,
+              "duration": 1689,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('header .btn').each($button => {\n  const buttonText = $button.text();\n  cy.log(`Header Button: ${buttonText}`);\n  cy.wrap($button).should('be.visible').and('not.be.disabled');\n});",
+              "err": {},
+              "uuid": "bbf6db32-9e23-4519-b42a-d245c74248bb",
+              "parentUUID": "524f77c8-0b60-496f-acb0-1570a94c8b47",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Find and log each footer button and link",
+              "fullTitle": "QAuto Header and Footer Button and Link Tests Find and log each footer button and link",
+              "timedOut": null,
+              "duration": 320,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('footer .btn, footer a').each($element => {\n  const elementText = $element.text();\n  cy.log(`Footer Element: ${elementText}`);\n  cy.wrap($element).should('be.visible').and('not.be.disabled');\n});",
+              "err": {},
+              "uuid": "951404a8-fe31-476f-9bb7-bd239a1571e0",
+              "parentUUID": "524f77c8-0b60-496f-acb0-1570a94c8b47",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bbf6db32-9e23-4519-b42a-d245c74248bb",
+            "951404a8-fe31-476f-9bb7-bd239a1571e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2009,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
