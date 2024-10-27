@@ -1,0 +1,479 @@
+{
+  "stats": {
+    "suites": 11,
+    "tests": 10,
+    "passes": 9,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-27T13:06:16.846Z",
+    "end": "2024-10-27T13:06:19.019Z",
+    "duration": 2173,
+    "testsRegistered": 10,
+    "passPercent": 90,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "23a65633-6cd5-4cbb-b7e5-564bb9041809",
+      "title": "",
+      "fullFile": "cypress/e2e/2-advanced-examples/cypress_api.cy.js",
+      "file": "cypress/e2e/2-advanced-examples/cypress_api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1c2b69b-83ec-4011-8508-9d73cf2cccc3",
+          "title": "Cypress APIs",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "91ec944e-bf42-4686-af2b-cb3774754fe2",
+              "title": "Cypress.Commands",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".add() - create a custom command",
+                  "fullTitle": "Cypress APIs Cypress.Commands .add() - create a custom command",
+                  "timedOut": null,
+                  "duration": 304,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "Cypress.Commands.add('console', {\n  prevSubject: true\n}, (subject, method) => {\n  // the previous subject is automatically received\n  // and the commands arguments are shifted\n  // allow us to change the console method used\n  method = method || 'log';\n  // log the subject to the console\n  console[method]('The subject is', subject);\n  // whatever we return becomes the new subject\n  // we don't want to change the subject so\n  // we return whatever was passed in\n  return subject;\n});\ncy.get('button').console('info').then($button => {\n  // subject is still $button\n});",
+                  "err": {},
+                  "uuid": "b5c1a9df-fe1a-4623-bc46-5b931a008657",
+                  "parentUUID": "91ec944e-bf42-4686-af2b-cb3774754fe2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b5c1a9df-fe1a-4623-bc46-5b931a008657"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 304,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f0e97e4e-5a11-480a-b9e7-4c8975495651",
+              "title": "Cypress.Cookies",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".debug() - enable or disable debugging",
+                  "fullTitle": "Cypress APIs Cypress.Cookies .debug() - enable or disable debugging",
+                  "timedOut": null,
+                  "duration": 76,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "Cypress.Cookies.debug(true);\n// Cypress will now log in the console when\n// cookies are set or cleared\ncy.setCookie('fakeCookie', '123ABC');\ncy.clearCookie('fakeCookie');\ncy.setCookie('fakeCookie', '123ABC');\ncy.clearCookie('fakeCookie');\ncy.setCookie('fakeCookie', '123ABC');",
+                  "err": {},
+                  "uuid": "5dd53a5e-9bc5-4e9c-9e7a-da8d9da870a4",
+                  "parentUUID": "f0e97e4e-5a11-480a-b9e7-4c8975495651",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5dd53a5e-9bc5-4e9c-9e7a-da8d9da870a4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 76,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "400eddb4-8bec-4a4f-8597-d3ec4eb33400",
+              "title": "Cypress.arch",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get CPU architecture name of underlying OS",
+                  "fullTitle": "Cypress APIs Cypress.arch Get CPU architecture name of underlying OS",
+                  "timedOut": null,
+                  "duration": 71,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/arch\nexpect(Cypress.arch).to.exist;",
+                  "err": {},
+                  "uuid": "42a189d6-4e0c-4257-8538-da146085f7fd",
+                  "parentUUID": "400eddb4-8bec-4a4f-8597-d3ec4eb33400",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "42a189d6-4e0c-4257-8538-da146085f7fd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 71,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5c9c0145-2904-4a63-a2ce-f918a00bf642",
+              "title": "Cypress.config()",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get and set configuration options",
+                  "fullTitle": "Cypress APIs Cypress.config() Get and set configuration options",
+                  "timedOut": null,
+                  "duration": 303,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/config\nlet myConfig = Cypress.config();\nexpect(myConfig).to.have.property('animationDistanceThreshold', 5);\nexpect(myConfig).to.have.property('baseUrl', null);\nexpect(myConfig).to.have.property('defaultCommandTimeout', 4000);\nexpect(myConfig).to.have.property('requestTimeout', 5000);\nexpect(myConfig).to.have.property('responseTimeout', 30000);\nexpect(myConfig).to.have.property('viewportHeight', 660);\nexpect(myConfig).to.have.property('viewportWidth', 1000);\nexpect(myConfig).to.have.property('pageLoadTimeout', 60000);\nexpect(myConfig).to.have.property('waitForAnimations', true);\nexpect(Cypress.config('pageLoadTimeout')).to.eq(60000);\n// this will change the config for the rest of your tests!\nCypress.config('pageLoadTimeout', 20000);\nexpect(Cypress.config('pageLoadTimeout')).to.eq(20000);\nCypress.config('pageLoadTimeout', 60000);",
+                  "err": {
+                    "message": "AssertionError: expected { Object (baseUrl, defaultCommandTimeout, ...) } to have property 'baseUrl' of null, but got 'https://guest:welcome2qauto@qauto.forstudy.space/'",
+                    "estack": "AssertionError: expected { Object (baseUrl, defaultCommandTimeout, ...) } to have property 'baseUrl' of null, but got 'https://guest:welcome2qauto@qauto.forstudy.space/'\n    at Context.eval (webpack://cypress_one/./cypress/e2e/2-advanced-examples/cypress_api.cy.js:77:31)",
+                    "diff": null
+                  },
+                  "uuid": "e16bf212-30c6-4011-a4e5-3ab6ec9c2e41",
+                  "parentUUID": "5c9c0145-2904-4a63-a2ce-f918a00bf642",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "e16bf212-30c6-4011-a4e5-3ab6ec9c2e41"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 303,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "1b9c27a2-ec73-4a61-bdf6-bdeaaac2232e",
+              "title": "Cypress.dom",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": ".isHidden() - determine if a DOM element is hidden",
+                  "fullTitle": "Cypress APIs Cypress.dom .isHidden() - determine if a DOM element is hidden",
+                  "timedOut": null,
+                  "duration": 85,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "let hiddenP = Cypress.$('.dom-p p.hidden').get(0);\nlet visibleP = Cypress.$('.dom-p p.visible').get(0);\n// our first paragraph has css class 'hidden'\nexpect(Cypress.dom.isHidden(hiddenP)).to.be.true;\nexpect(Cypress.dom.isHidden(visibleP)).to.be.false;",
+                  "err": {},
+                  "uuid": "a27e642d-11ed-4668-8c8d-f9730bf73bd2",
+                  "parentUUID": "1b9c27a2-ec73-4a61-bdf6-bdeaaac2232e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a27e642d-11ed-4668-8c8d-f9730bf73bd2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 85,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c913eff6-93c6-4814-bf94-6b59d5dd657b",
+              "title": "Cypress.env()",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get environment variables",
+                  "fullTitle": "Cypress APIs Cypress.env() Get environment variables",
+                  "timedOut": null,
+                  "duration": 74,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/env\n// set multiple environment variables\nCypress.env({\n  host: 'veronica.dev.local',\n  api_server: 'http://localhost:8888/v1/'\n});\n// get environment variable\nexpect(Cypress.env('host')).to.eq('veronica.dev.local');\n// set environment variable\nCypress.env('api_server', 'http://localhost:8888/v2/');\nexpect(Cypress.env('api_server')).to.eq('http://localhost:8888/v2/');\n// get all environment variable\nexpect(Cypress.env()).to.have.property('host', 'veronica.dev.local');\nexpect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/');",
+                  "err": {},
+                  "uuid": "94f129f3-149c-4faa-a12d-e9b751d5d14e",
+                  "parentUUID": "c913eff6-93c6-4814-bf94-6b59d5dd657b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "94f129f3-149c-4faa-a12d-e9b751d5d14e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 74,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "542f615c-e472-46aa-a66f-1f490adda476",
+              "title": "Cypress.log",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Control what is printed to the Command Log",
+                  "fullTitle": "Cypress APIs Cypress.log Control what is printed to the Command Log",
+                  "timedOut": null,
+                  "duration": 74,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/cypress-log",
+                  "err": {},
+                  "uuid": "ffba2874-d97d-44f4-a6b0-e1a5dfd9e1d8",
+                  "parentUUID": "542f615c-e472-46aa-a66f-1f490adda476",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ffba2874-d97d-44f4-a6b0-e1a5dfd9e1d8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 74,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b5c78e70-6ca8-42d7-b53b-e058f1f9b9a5",
+              "title": "Cypress.platform",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get underlying OS name",
+                  "fullTitle": "Cypress APIs Cypress.platform Get underlying OS name",
+                  "timedOut": null,
+                  "duration": 71,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/platform\nexpect(Cypress.platform).to.be.exist;",
+                  "err": {},
+                  "uuid": "a66b94f1-903c-4e5e-aa25-794b5db6131b",
+                  "parentUUID": "b5c78e70-6ca8-42d7-b53b-e058f1f9b9a5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a66b94f1-903c-4e5e-aa25-794b5db6131b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 71,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "daba25f3-2b41-431e-8dc0-8b83527300f2",
+              "title": "Cypress.version",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get current version of Cypress being run",
+                  "fullTitle": "Cypress APIs Cypress.version Get current version of Cypress being run",
+                  "timedOut": null,
+                  "duration": 67,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/version\nexpect(Cypress.version).to.be.exist;",
+                  "err": {},
+                  "uuid": "434f4296-202a-40ea-af01-2c90fa6e87a2",
+                  "parentUUID": "daba25f3-2b41-431e-8dc0-8b83527300f2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "434f4296-202a-40ea-af01-2c90fa6e87a2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 67,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "cdea9b80-2c96-444a-9187-c85e0f6cc7dc",
+              "title": "Cypress.spec",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get current spec information",
+                  "fullTitle": "Cypress APIs Cypress.spec Get current spec information",
+                  "timedOut": null,
+                  "duration": 77,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/spec\n// wrap the object so we can inspect it easily by clicking in the command log\ncy.wrap(Cypress.spec).should('include.keys', ['name', 'relative', 'absolute']);",
+                  "err": {},
+                  "uuid": "d5177aa6-29dd-4f67-a5f6-80b56c26fe75",
+                  "parentUUID": "cdea9b80-2c96-444a-9187-c85e0f6cc7dc",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d5177aa6-29dd-4f67-a5f6-80b56c26fe75"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 77,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

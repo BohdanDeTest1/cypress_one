@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-21T19:20:55.859Z",
+    "end": "2024-10-21T19:20:57.818Z",
+    "duration": 1959,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "43232c6d-99d6-42d8-806c-e2482c72d5f9",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_3/UserTest1.cy.js",
+      "file": "cypress/e2e/Homework_3/UserTest1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d53609c-efa8-485b-aa87-8b00008f264e",
+          "title": "QAuto Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login Test",
+              "fullTitle": "QAuto Tests Login Test",
+              "timedOut": null,
+              "duration": 1916,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('button').contains('Sign In').click();\ncy.get('#signinEmail').type(login);\ncy.get('#signinPassword').type(password, {\n  sensitive: true\n});\ncy.get('button').contains('Login').click();\ncy.url().should('include', '/panel/garage');",
+              "err": {
+                "message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:115427:68)\n    at wrapped (https://guest:welcome2qauto@qauto.forstudy.space/__cypress/runner/cypress_runner.js:138145:19)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress_one/./cypress/e2e/Homework_3/UserTest1.cy.js:7:31)",
+                "diff": null
+              },
+              "uuid": "bc03117b-a192-4935-8626-bf58d5465170",
+              "parentUUID": "0d53609c-efa8-485b-aa87-8b00008f264e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bc03117b-a192-4935-8626-bf58d5465170"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1916,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
