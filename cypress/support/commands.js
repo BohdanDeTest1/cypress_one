@@ -1,25 +1,43 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('createExpense', (carId, mileage, liters, cost) => {
+    const token = Cypress.env('authToken');
+
+    if (!token) {
+        throw new Error('Token not found');
+    }
+
+    cy.request({
+        method: 'POST',
+        url: '/api/expenses',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: {
+            car_id: carId,
+            mileage: mileage,
+            liters: liters,
+            total_cost: cost
+        },
+        failOnStatusCode: false
+    }).then((response) => {
+        expect(response.status).to.equal(201);
+        return response.body.id;
+    });
+});
+
+Cypress.Commands.add('loginAndSaveToken', () => {
+    cy.request({
+        method: 'POST',
+        url: '/api/auth/signin',
+        body: {
+            email: Cypress.env('email'),
+            password: Cypress.env('password')
+        }
+    }).then((response) => {
+        expect(response.status).to.equal(200);
+        const token = response.body.token;
+        Cypress.env('authToken', token);
+        cy.log(`Token saved: ${token}`);
+    });
+});
