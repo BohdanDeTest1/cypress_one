@@ -1,0 +1,175 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2024-10-30T22:18:26.046Z",
+    "end": "2024-10-30T22:18:38.921Z",
+    "duration": 12875,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c4002dcf-a63f-4f1f-80ba-ce3a080562d9",
+      "title": "",
+      "fullFile": "cypress/e2e/Homework_4/Interception.cy.js",
+      "file": "cypress/e2e/Homework_4/Interception.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0760acc9-75f2-46aa-8320-d25cff15e7fc",
+          "title": "QAuto Car Creation with Interception",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should create a car and intercept the response",
+              "fullTitle": "QAuto Car Creation with Interception Should create a car and intercept the response",
+              "timedOut": null,
+              "duration": 2630,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('POST', '/api/cars').as('createCar');\ngaragePage.openAddCarModal();\ngaragePage.selectCarBrand('Ford');\ngaragePage.selectCarModel('Focus');\ngaragePage.enterMileage('10');\ngaragePage.submitAddCar();\ncy.wait('@createCar').then(interception => {\n  expect(interception.response.statusCode).to.equal(201);\n  carId = interception.response.body.id;\n  cy.log(`Created car ID: ${carId}`);\n});",
+              "err": {},
+              "uuid": "ae04a808-cab4-460a-b4be-3b1b1cc7f623",
+              "parentUUID": "0760acc9-75f2-46aa-8320-d25cff15e7fc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should validate created car via API",
+              "fullTitle": "QAuto Car Creation with Interception Should validate created car via API",
+              "timedOut": null,
+              "duration": 2006,
+              "state": "passed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const token = Cypress.env('authToken');\nif (!token) {\n  throw new Error('Token not found');\n}\ncy.request({\n  method: 'GET',\n  url: '/api/cars',\n  headers: {\n    'Authorization': `Bearer ${token}`\n  }\n}).then(response => {\n  expect(response.status).to.equal(200);\n  const createdCar = response.body.cars.find(car => car.id === carId);\n  expect(createdCar).to.exist;\n  expect(createdCar.brand).to.equal('Ford');\n  expect(createdCar.model).to.equal('Focus');\n  expect(createdCar.mileage).to.equal(10);\n});",
+              "err": {
+                "message": "Error: Token not found",
+                "estack": "Error: Token not found\n    at Context.eval (webpack://cypress_one/./cypress/e2e/Homework_4/Interception.cy.js:36:18)",
+                "diff": null
+              },
+              "uuid": "0af7f709-937e-4803-a9a6-ee5e5f5fa6ad",
+              "parentUUID": "0760acc9-75f2-46aa-8320-d25cff15e7fc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should create an expense via API",
+              "fullTitle": "QAuto Car Creation with Interception Should create an expense via API",
+              "timedOut": null,
+              "duration": 2335,
+              "state": "passed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.createExpense(carId, 11, 10, 10).then(expenseId => {\n  cy.wrap(expenseId).as('createdExpenseId');\n});",
+              "err": {
+                "message": "Error: Token not found",
+                "estack": "Error: Token not found\n    at Context.eval (webpack://cypress_one/./cypress/support/commands.js:6:14)",
+                "diff": null
+              },
+              "uuid": "01f68a6d-554f-4376-9f02-3e3f117c59cc",
+              "parentUUID": "0760acc9-75f2-46aa-8320-d25cff15e7fc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should validate created expense via UI",
+              "fullTitle": "QAuto Car Creation with Interception Should validate created expense via UI",
+              "timedOut": null,
+              "duration": 3046,
+              "state": "passed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.car-item', {\n  timeout: 10000\n}).first().find('button.car_edit.btn.btn-edit').click();\ncy.contains('Mileage: 11', {\n  timeout: 10000\n}).should('be.visible');\ncy.contains('Liters: 10', {\n  timeout: 10000\n}).should('be.visible');\ncy.contains('Total cost: 10', {\n  timeout: 10000\n}).should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.car-item`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.car-item`, but never found it.\n    at Context.eval (webpack://cypress_one/./cypress/e2e/Homework_4/Interception.cy.js:63:11)",
+                "diff": null
+              },
+              "uuid": "5e3e9c94-da99-4112-956e-0363649e7f42",
+              "parentUUID": "0760acc9-75f2-46aa-8320-d25cff15e7fc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ae04a808-cab4-460a-b4be-3b1b1cc7f623"
+          ],
+          "failures": [
+            "0af7f709-937e-4803-a9a6-ee5e5f5fa6ad",
+            "01f68a6d-554f-4376-9f02-3e3f117c59cc",
+            "5e3e9c94-da99-4112-956e-0363649e7f42"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12822,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -9,6 +9,7 @@
     "test:UserTest1": "npx cypress run --spec 'cypress/e2e/Homework_3/UserTest1.cy.js' --browser chrome",
     "test:User1": "npx cypress run --spec 'cypress/e2e/Homework_3/User_1_test.cy.js' --browser chrome",
     "test:User2": "npx cypress run --spec 'cypress/e2e/Homework_3/User_2_test.cy.js' --browser chrome",
+    "test:headlessHW4": "cypress run --headless --spec 'cypress/e2e/Homework_4/Interception.cy.js' --browser chrome",
     "report": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json && npx mochawesome-report-generator cypress/reports/report.json"
   },
   "keywords": [],
